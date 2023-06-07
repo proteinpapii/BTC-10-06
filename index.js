@@ -70,6 +70,19 @@ getElement('#btnMinDuong').onclick = function () {
     document.getElementById('spanMinDuong').innerHTML = min;
 }
 
+// No.5
+getElement('#btnsoChan').onclick = function () {
+    var lastNumber = 0;
+    for (var i = 0; i < mangNumber.arrNumber.length; i++) {
+        if (
+            mangNumber.arrNumber[i] % 2 === 0
+        ){
+            lastNumber = mangNumber.arrNumber[i];
+        }
+    }
+    document.getElementById('spansoChan').innerHTML = lastNumber;
+}
+
 
 
 
