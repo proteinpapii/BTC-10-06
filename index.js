@@ -30,8 +30,7 @@ getElement('#btnTinhTong').onclick = function () {
             tong += mangNumber.arrNumber[i];
         }
     }
-
-    document.getElementById('spanTinhTong').innerHTML = tong;
+    getElement('#spanTinhTong').innerHTML = tong;
 }
 
 // No.2
@@ -42,8 +41,7 @@ getElement('#btnDemSo').onclick = function () {
             tong += 1;
         }
     }
-
-    document.getElementById('spanDemSo').innerHTML = tong;
+    getElement('#spanDemSo').innerHTML = tong;
 }
 
 // No.3
@@ -54,8 +52,7 @@ getElement('#btnMin').onclick = function () {
             min = mangNumber.arrNumber[i];
         }
     }
-
-    document.getElementById('spanMin').innerHTML = min;
+    getElement('#spanMin').innerHTML = min;
 }
 
 // No.4
@@ -66,8 +63,7 @@ getElement('#btnMinDuong').onclick = function () {
             min = mangNumber.arrNumber[i];
         }
     }
-
-    document.getElementById('spanMinDuong').innerHTML = min;
+    getElement('#spanMinDuong').innerHTML = min;
 }
 
 // No.5
@@ -80,8 +76,7 @@ getElement('#btnsoChan').onclick = function () {
             lastNumber = mangNumber.arrNumber[i];
         }
     }
-
-    document.getElementById('spansoChan').innerHTML = lastNumber;
+    getElement('#spansoChan').innerHTML = lastNumber;
 }
 
 // No.6
@@ -96,8 +91,7 @@ getElement('#btnDoiCho').onclick = function () {
 
     mangNumber.arrNumber[j] = temp
 
-    document.getElementById('spanDoiCho').innerHTML = mangNumber.arrNumber;
-
+    getElement('#spanDoiCho').innerHTML = mangNumber.arrNumber;
 }
 
 // No.7
@@ -107,9 +101,7 @@ getElement('#btnTangDan').onclick = function () {
 
         return a - b;
     })
-
-    document.getElementById('spanTangDan').innerHTML = mangNumber.arrNumber;
-
+    getElement('#spanTangDan').innerHTML = mangNumber.arrNumber;
 }
 
 // No.8
@@ -137,7 +129,8 @@ getElement('#btnNguyenTo').onclick = function () {
             break
         }
     }
-    document.getElementById('spanNguyenTo').innerHTML = mangNumber.arrNumber[i];
+    getElement('#spanNguyenTo').innerHTML = mangNumber.arrNumber[i];
+    
 }
 
 // No.9
@@ -178,8 +171,55 @@ getElement('#btnDemSoNguyen').onclick = function () {
            
         }
     }
-    document.getElementById('spanDemSoNguyen').innerHTML = count;
+    getElement('#spanDemSoNguyen').innerHTML = count;
+    
 }
+
+
+// No.10
+getElement('#btnSoSanh').onclick = function () {
+    function checkSo (n) {
+        var flag = 0
+        if (n > 0) {
+            flag = 1
+        } else if (n < 0) {
+            flag = -1
+        }
+        return flag
+
+    }
+     
+    var soAm = 0
+    var soDuong = 0
+    var result = 0
+    
+
+    for (var i = 0; i < mangNumber.arrNumber.length; i++) {
+        var check = checkSo(mangNumber.arrNumber[i])
+
+        if (check === 1) {
+            soDuong++
+        } else if (check === -1) {
+            soAm++
+        }
+    }
+    if (soDuong == soAm) {
+        result = "Số Dương = Số Âm"
+    }else if (soDuong > soAm) {
+        result = "Số Dương > Số Âm"
+    } else {
+        result = "Số Dương < Số Âm"
+    }
+
+    getElement('#spanSoSanh').innerHTML = result;
+
+}
+
+
+
+
+
+
 
 
 
